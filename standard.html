@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SJJIF Timer Green-White</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script src="../jquery-2.1.1.min.js"></script>
+    <script src="../jquery.browser.min.js"></script>
+    <script src="../jquery.alerts.js"></script>
+    <script src="../jquery-ui.js"></script>
+    <script src="../jquery.cookie.js"></script>
+    <script src="../sv_widget_original.js"></script>
+
+    <link href="../jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="../jquery.alerts.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="scoreboard.css">
+
+</head>
+
+<body>
+<!-- Save for Web Slices (nabjjf-timer-tablet.psd) -->
+<div id="Clockface">
+    <div class="row" style="grid-template-columns: 1fr 1fr;">
+        <div id="sv_reg1" class="competitor1_font">COMPETITOR 2</div>
+        <div id="sv_reg2" class="competitor2_font">COMPETITOR 1</div>
+    </div>
+    <div class="row" style="grid-template-columns: 1fr;">
+        <div id="tie_break">TIE BREAK</div>
+    </div>
+    <div class="row" style="grid-template-columns: 1fr 2fr 1fr;">
+        <img class="flag_image"id="competitor1_flag_img" src="/assets/0010_usa.png"
+             style="border: 3px solid #000000;">
+        <div style="display:none;" align="center" id="competitor1_flag_name" class="competitor1_country_font">United States (USA)</div>
+        <div style="width: 100%">
+            <div id="sv_timer">00:00
+            </div>
+        </div>
+        <img class="flag_image" id="competitor2_flag_img" src="/assets/0010_usa.png"
+             style="border: 3px solid #000000;">
+        <div style="display:none;" align="center" id="competitor2_flag_name" class="competitor2_country_font">United States (USA)</div>
+    </div>
+    <div class="row" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div style="display: flex">
+            <div class="points_dots_wrapper left">
+                <img src="left-circles-yellow.png" class="points_dots">
+                <img src="left-circles-orange.png" class="points_dots">
+                <img src="left-circles-red.png" class="points_dots">
+            </div>
+            <div id="sv_minus1" class="points">-2</div>
+        </div>
+        <div><img id="logo" src="logo.png" alt="SJJIF Logo"></div>
+        <div style="display: flex">
+            <div id="sv_minus2" class="points">-1</div>
+            <div class="points_dots_wrapper right">
+                <img src="right-circles-yellow.png" class="points_dots">
+                <img src="right-circles-orange.png" class="points_dots">
+                <img src="right-circles-red.png" class="points_dots">
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<!--<table id="Clockface">-->
+<!--    <tr>-->
+<!--        <td colspan="6">-->
+<!--            <div>-->
+<!--                <div id="sv_reg1" class="competitor1_font">COMPETITOR 2</div>-->
+<!--            </div>-->
+<!--        </td>-->
+<!--        <td colspan="6">-->
+<!--            <div>-->
+<!--                <div id="sv_reg2" class="competitor2_font">COMPETITOR 1</div>-->
+<!--            </div>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td colspan="2">-->
+<!--            <div class="flag_image">-->
+<!--                <img id="competitor1_flag_img" src="/assets/0010_usa.png"-->
+<!--                     style="border: 3px solid #000000;">-->
+<!--            </div>-->
+<!--        </td>-->
+<!--        <td colspan="8" bgcolor="000000">-->
+<!--            <div style="display: table-cell; vertical-align: middle;">-->
+<!--                <div id="tie_break" class="floatingRectangle">TIE BREAK</div>-->
+<!--                <div id="sv_timer"-->
+<!--                     style="text-align: center; color: #fe0000; font-family: 'LCD2U', monospace">00:00-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </td>-->
+<!--        <td colspan="2">-->
+<!--            <div class="flag_image">-->
+<!--                <img id="competitor2_flag_img" src="/assets/0010_usa.png"-->
+<!--                     style="border: 3px solid #000000;">-->
+<!--            </div>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td></td>-->
+<!--        <td style="display:none;" align="center" id="competitor1_flag_name" class="competitor1_country_font">United-->
+<!--            States (USA)-->
+<!--        </td>-->
+<!--        <td colspan="8"></td>-->
+<!--        <td style="display:none;" align="center" id="competitor2_flag_name" class="competitor2_country_font">United-->
+<!--            States (USA)-->
+<!--        </td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td colspan="6"><img src="spacer.gif" alt=""></td>-->
+<!--        <td colspan="4"><img src="spacer.gif" alt=""></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td><img src="spacer.gif" width="13" height="161" alt=""></td>-->
+<!--        <td colspan="2" bgcolor="000000">-->
+<!--            <div>-->
+<!--                <div id="sv_minus1"-->
+<!--                     style="text-align: center; color: #fe0000; font-size: 120px; font-family: 'LCD2U', monospace">-2-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </td>-->
+<!--        <td rowspan="2"><img src="spacer.gif" width="172" height="190" alt=""></td>-->
+<!--        <td colspan="4" rowspan="2"><img src="logo.png" width="303" height="190" alt=""></td>-->
+<!--        <td rowspan="2"><img src="spacer.gif" width="169" height="190" alt=""></td>-->
+<!--        <td colspan="2" bgcolor="000000">-->
+<!--            <div>-->
+<!--                <div id="sv_minus2"-->
+<!--                     style="text-align: center; color: #fe0000; font-size: 120px; font-family: 'LCD2U', monospace">-1-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </td>-->
+<!--        <td><img src="spacer.gif" width="15" height="161" alt=""></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td colspan="3"><img src="spacer.gif" width="177" height="29" alt=""></td>-->
+<!--        <td colspan="3"><img src="spacer.gif" width="179" height="29" alt=""></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        &lt;!&ndash;<td colspan="2"><img src="spacer.gif" width="141" height="186" alt=""></td>&ndash;&gt;-->
+<!--        <td colspan="2">-->
+<!--            <img src="spacer.gif" width="100" height="186" alt="">-->
+<!--            <img src="left-circles-yellow.png" style="display:none; width: 113px; height:186px">-->
+<!--            <img src="left-circles-orange.png" style="display:none; width: 113px; height:186px">-->
+<!--            <img src="left-circles-red.png" style="display:none; width: 113px; height:186px">-->
+<!--        </td>-->
+<!--        <td colspan="3" bgcolor="000000">-->
+<!--            <div style="width: 318px; height: 186px; display: table-cell; vertical-align: middle; text-align: center;">-->
+<!--                <div id="sv_score1"-->
+<!--                     style="text-align: center; color: #00ff01; font-size: 170px; font-family: 'LCD2U', monospace">00-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </td>-->
+<!--        <td><img src="spacer.gif"></td>-->
+<!--        <td><img src="spacer.gif"></td>-->
+<!--        <td colspan="3" bgcolor="000000">-->
+<!--            <div>-->
+<!--                <div id="sv_score2"-->
+<!--                     style="text-align: center; color: #00ff01; font-size: 170px; font-family: 'LCD2U', monospace">00-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </td>-->
+<!--        <td colspan="2">-->
+<!--            <img src="right-circles-yellow.png" style="display:none; width: 113px; height:186px;">-->
+<!--            <img src="right-circles-orange.png" style="display:none; width: 113px; height:186px;">-->
+<!--            <img src="right-circles-red.png" style="display:none; width: 113px; height:186px;">-->
+<!--        </td>-->
+<!--        &lt;!&ndash;<td colspan="2"><img src="spacer.gif" width="142" height="186" alt=""></td> &ndash;&gt;-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td colspan="6"><img src="spacer.gif" width="500" height="18" alt=""></td>-->
+<!--        <td colspan="6"><img src="spacer.gif" width="500" height="18" alt=""></td>-->
+<!--    </tr>-->
+    <!--    <tr>-->
+    <!--        <td><img src="spacer.gif" width="13" height="1" alt=""></td>-->
+    <!--        <td><img src="spacer.gif" width="128" height="1" alt=""></td>-->
+    <!--        <td><img src="spacer.gif" width="36" height="1" alt=""></td>-->
+    <!--        <td><img src="spacer.gif" width="172" height="1" alt=""></td>-->
+    <!--        <td><img src="spacer.gif" width="110" height="1" alt=""></td>-->
+    <!--        <td><img src="spacer.gif" width="41" height="1" alt=""></td>-->
+    <!--        <td><img src="spacer.gif" width="40" height="1" alt=""></td>-->
+    <!--        <td><img src="spacer.gif" width="112" height="1" alt=""></td>-->
+    <!--        <td><img src="spacer.gif" width="169" height="1" alt=""></td>-->
+    <!--        <td><img src="spacer.gif" width="37" height="1" alt=""></td>-->
+    <!--        <td><img src="spacer.gif" width="127" height="1" alt=""></td>-->
+    <!--        <td><img src="spacer.gif" width="15" height="1" alt=""></td>-->
+    <!--    </tr>-->
+<!--</table>-->
+<!-- End Save for Web Slices -->
+
+</body>
+</html>
+

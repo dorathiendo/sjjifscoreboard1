@@ -1,0 +1,211 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+input,
+select {
+    background: white !important;
+    color: black !important;
+}
+
+.gym_timer {
+    transform-origin: center top;
+}
+
+.rounds {
+    background: white;
+    color: black;
+}
+
+.prepare {
+    background: yellow;
+    color: black;
+}
+
+.round {
+    background: green;
+    color: black;
+}
+
+.warning {
+    background: orange;
+    color: black;
+}
+
+.rest {
+    background: red;
+    color: black;
+}
+
+.dialog {
+    display: none;
+}
+
+#save_as_wrapper {
+    display: none;
+}
+
+.logo {
+    max-width: 40vw;
+    justify-self: flex-end;
+}
+
+.logo.black {
+    display: none;
+}
+
+.header {
+    padding: 0.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    .date, .time {
+        text-align: center;
+    }
+}
+
+.date_wrapper h1 {
+    font-size: 3vw;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.date_wrapper h2 {
+    font-size: 5vw;
+    margin: 0;
+}
+
+.timer_wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#round {
+    text-align: center;
+    font-size: 5vw;
+    border: 1vw solid black;
+    margin: 0 0 20px 0;
+}
+
+#timer {
+    font-size: 15vw;
+    margin: 0;
+    text-align: center;
+}
+
+button {
+    padding: 0.8em;
+    font-size: 1.5vw;
+    border-radius: 10px;
+    margin: 0 0.5em;
+    cursor: pointer;
+    border: 1px solid #666666;
+    color: black;
+}
+
+.buttons_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.team_logo_wrapper {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.team_logo {
+    max-width: 100%;
+    max-height: 50vh;
+}
+
+#team_logo_input {
+    display: none;
+}
+
+.input_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.input_wrapper > * {
+    width: 50%;
+}
+
+.input_wrapper select {
+    width: 100%;
+}
+
+#program_list {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.radio_wrapper {
+    margin: 10px 0;
+}
+
+#start_button, #pause_button {
+    margin: 0 1vw;
+    cursor: pointer;
+    background: rgb(237,237,237);
+    background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(182,182,182,1) 47%);
+    border: 1px solid #666666;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#refresh_button {
+    margin: 0 1vw;
+    width: 4vw;
+    cursor: pointer;
+}
+
+.time_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.round_wrapper {
+    width: 60%;
+}
+
+#settings_button {
+    width: 50px;
+    height: 55px;
+}
+
+.alarm_settings_wrapper {
+    margin: 0 20px;
+}
+
+#pause_button {
+    display: none;
+}
+
+.setting_wrapper {
+    display: flex;
+    align-self: center;
+}

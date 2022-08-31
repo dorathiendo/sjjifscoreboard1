@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+    <title>SJJIF Timer Green-White</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script src="jquery-2.1.1.min.js"></script>
+    <script src="jquery.browser.min.js"></script>
+    <script src="jquery.alerts.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script src="howler.min.js"></script>
+    <script src="gym_timer.js"></script>
+
+    <link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="jquery.alerts.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="gym_timer.css">
+</head>
+<body>
+    <div class="gym_timer">
+        <div class="header">
+            <div class="date_wrapper">
+                <h1 class="date"></h1>
+                <h2 class="time"></h2>
+            </div>
+            <div class="setting_wrapper">
+                <div class="alarm_settings_wrapper">
+                    <span style="display:block;text-align: center">Alarm Settings</span>
+                    <select name="hour" id="alarm_hour">
+                        <option value="12">12</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>:
+                    <select name="minute" id="alarm_minute">
+                        <option value="00">00</option>
+                        <option value="05">05</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="35">35</option>
+                        <option value="40">40</option>
+                        <option value="45">45</option>
+                        <option value="50">50</option>
+                        <option value="55">55</option>
+                    </select>
+                    <select name="am_pm" id="alarm_am_pm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <select name="on_off" id="alarm_on_off">
+                        <option value="on">ON</option>
+                        <option selected value="off">OFF</option>
+                    </select>
+                </div>
+                <img id="settings_button" src="assets/settings_button.png"/>
+                <div class="dialog" id="settings_dialog">
+                    <div class="input_wrapper">
+                        <label>Background color</label>
+                        <select name="background_color" id="background_color">
+                            <option value="white">White</option>
+                            <option value="black">Black</option>
+                        </select>
+                    </div>
+                    <div class="input_wrapper">
+                        <label>Timer type</label>
+                        <select name="timer_type" id="timer_type">
+                            <option value="stopwatch">Stop Watch</option>
+                            <option value="countdown">Countdown</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <img class="logo white" src="./assets/sjjif%20bumper%20sticker%20white.png" alt="SJJIF Logo">
+            <img class="logo black" src="./assets/sjjif%20bumper%20sticker%20Black.png" alt="SJJIF Logo">
+        </div>
+        <div class="timer_wrapper">
+            <div class="team_logo_wrapper">
+                <input id="team_logo_input" type="file">
+                <img class="team_logo" src="./assets/team_logo_placeholder.png" alt="Team Logo">
+            </div>
+            <div class="round_wrapper">
+                <h1 id="round">Round</h1>
+                <h2 id="timer">00:00</h2>
+            </div>
+        </div>
+        <div class="buttons_wrapper">
+            <button id="program_button">Program</button>
+            <button id="start_button" alt="Start button">Start</button>
+            <button id="pause_button" alt="pause button">Pause</button>
+            <img id="refresh_button" src="./assets/refresh_button.png" alt="Refresh button">
+            <button id="rounds_button" class="rounds">Rounds</button>
+            <button id="prepare_time_button" class="prepare">Prepare</button>
+            <button id="round_time_button" class="round">Round</button>
+            <button id="warning_time_button" class="warning">Warning</button>
+            <button id="rest_time_button" class="rest">Rest</button>
+            <div class="dialog" id="time_dialog">
+                <div class="input_wrapper">
+                    <label></label>
+                    <input type="text" />
+                </div>
+            </div>
+        </div>
+        <div id="program_dialog" class="dialog">
+            <h3>Saved Programs</h3>
+            <select name="program_list" id="program_list"></select>
+            <div class="input_wrapper">
+                <label>Rounds</label>
+                <input type="text" id="rounds_input"/>
+            </div>
+            <div class="input_wrapper">
+                <label>Prepare Time</label>
+                <input type="text" id="prepare_input"/>
+            </div>
+            <div class="input_wrapper">
+                <label>Round Time</label>
+                <input type="text" id="round_input"/>
+            </div>
+            <div class="input_wrapper">
+                <label>Warning Time</label>
+                <input type="text" id="warning_input"/>
+            </div>
+            <div class="input_wrapper">
+                <label>Rest Time</label>
+                <input type="text" id="rest_input"/>
+            </div>
+        </div>
+        <div id="save_as_dialog" class="dialog">
+            <label>Name</label>
+            <input type="text" id="save_as_name_input"/>
+        </div>
+    </div>
+</body>
+</html>
+

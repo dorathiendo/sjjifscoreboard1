@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SJJIF Timer Green-White</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="jquery-2.1.1.min.js"></script>
+    <script src="jquery.browser.min.js"></script>
+    <script src="jquery.alerts.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script src="sv_widget.js"></script>
+
+    <link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="jquery.alerts.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="font.css">
+
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            padding-top: 20vh;
+        }
+        .background {
+            position: fixed;
+            height: 100%;
+            width: 50%;
+            top: 0;
+            left: 0;
+            background: darkgreen;
+            z-index: -1;
+        }
+        .homepage {
+            overflow-x: hidden;
+            transform-origin: center top;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 50px;
+            width: 20vw;
+            min-width: 200px;
+        }
+        .wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .scoreboard-link {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .scoreboard-link button {
+            width: 30vw;
+            text-align: center;
+            padding: 20px;
+            border: 3px solid black;
+            font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', 'Arial Black', sans-serif;
+            font-size: 120%;
+            background: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 500px) {
+            .wrapper {
+                flex-direction: column;
+            }
+            .scoreboard-link button {
+                width: 90vw;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="homepage">
+        <img class="logo" src="logo.png" alt="logo">
+        <div class="wrapper">
+            <a href="/standard" class="scoreboard-link"><button>SJJIF Standard Scoreboard</button></a>
+            <a href="/submission_only" class="scoreboard-link"><button>SJJIF Submission Only Scoreboard</button></a>
+            <a href="/gym_timer" class="scoreboard-link"><button>SJJIF Gym Timer</button></a>
+            <a href="/podium" class="scoreboard-link"><button>SJJIF Podium</button></a>
+        </div>
+    </div>
+
+    <script>
+        function fillDiv(div) {
+            const ratio = $(window).height() / div.height();
+            if (ratio < 1) {
+                div.css('transform', `scale(${ratio})`);
+            } else {
+                div.css('transform', `scale(1)`);
+            }
+        }
+
+        fillDiv($('.homepage'));
+
+        $( window ).resize(function() {
+            fillDiv($('.homepage'));
+        });
+    </script>
+</body>
+</html>
+

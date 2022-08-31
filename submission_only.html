@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+    <title>SJJIF Timer Green-White</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script src="jquery-2.1.1.min.js"></script>
+    <script src="jquery.browser.min.js"></script>
+    <script src="jquery.alerts.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="sv_widget.js"></script>
+
+    <link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="jquery.alerts.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="scoreboard.css">
+    <link rel="stylesheet" href="overtime.css">
+</head>
+
+<body>
+<div id="Clockface">
+    <div class="row" style="grid-template-columns: 1fr 1fr;">
+        <div id="sv_reg1" class="competitor1_font">COMPETITOR 2</div>
+        <h1 class="winner-label player1-winner">WINNER</h1>
+        <div id="sv_reg2" class="competitor2_font">COMPETITOR 1</div>
+        <h1 class="winner-label player2-winner">WINNER</h1>
+    </div>
+    <div class="row" style="grid-template-columns: 1fr;padding: 0;">
+        <div id="tie_break">TIE BREAK</div>
+    </div>
+    <div class="row" style="grid-template-columns: 1fr 2fr 1fr;">
+        <img class="flag_image"id="competitor1_flag_img" src="/assets/0010_usa.png"
+             style="border: 3px solid #000000;">
+        <div style="display:none;" align="center" id="competitor1_flag_name" class="competitor1_country_font">United States (USA)</div>
+        <div style="width: 100%">
+            <div id="sv_timer">00:00
+            </div>
+        </div>
+        <img class="flag_image" id="competitor2_flag_img" src="/assets/0010_usa.png"
+             style="border: 3px solid #000000;">
+        <div style="display:none;" align="center" id="competitor2_flag_name" class="competitor2_country_font">United States (USA)</div>
+    </div>
+    <div class="row" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div style="display: flex">
+            <div class="points_dots_wrapper left">
+                <img src="left-circles-yellow.png" class="points_dots">
+                <img src="left-circles-orange.png" class="points_dots">
+                <img src="left-circles-red.png" class="points_dots">
+            </div>
+            <div id="sv_minus1" class="points">-2</div>
+        </div>
+        <div><img id="logo" src="logo.png" alt="SJJIF Logo"></div>
+        <div style="display: flex">
+            <div id="sv_minus2" class="points">-1</div>
+            <div class="points_dots_wrapper right">
+                <img src="right-circles-yellow.png" class="points_dots">
+                <img src="right-circles-orange.png" class="points_dots">
+                <img src="right-circles-red.png" class="points_dots">
+            </div>
+        </div>
+    </div>
+    <div id="overtime_section" class="row" style="grid-template-columns: 1fr 1fr;">
+        <div class="overtime_box_wrapper">
+            <div class="overtime_box" round="1" player="player1">
+                <span class="label"></span>
+                <span class="time"></span>
+            </div>
+            <div class="overtime_box finals" round="2" player="player1">
+                <span class="label"></span>
+                <span class="time"></span>
+            </div>
+            <div class="overtime_box finals" round="3" player="player1">
+                <span class="label"></span>
+                <span class="time"></span>
+            </div>
+        </div>
+        <div class="overtime_box_wrapper">
+            <div class="overtime_box" round="1" player="player2">
+                <span class="label"></span>
+                <span class="time"></span>
+            </div>
+            <div class="overtime_box finals" round="2" player="player2">
+                <span class="label"></span>
+                <span class="time"></span>
+            </div>
+            <div class="overtime_box finals" round="3" player="player2">
+                <span class="label"></span>
+                <span class="time"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
